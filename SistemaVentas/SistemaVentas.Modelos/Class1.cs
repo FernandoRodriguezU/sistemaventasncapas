@@ -5,3 +5,4 @@
 
     }
 }
+//C: \Users\LABORATORIO A\Source\Repos\sistemaventasncapas\SistemaVentas\SistemaVentas.Modelos\SistemaVentas.Modelos.csproj
