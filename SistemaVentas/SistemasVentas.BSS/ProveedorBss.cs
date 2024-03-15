@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SistemasVentas.BSS;
+using SistemaVentas.Modelos;
 
 namespace SistemasVentas.BSS
 {
@@ -16,6 +17,10 @@ namespace SistemasVentas.BSS
         {
 
             return dal.LIstarProveedorDal();
+        }
+        public void InsertarProveedorBss(Proveedor proveedor)
+        {
+            dal.InsertarProveedorDal(proveedor);
         }
     }
 }

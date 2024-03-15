@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,5 +17,11 @@ namespace SistemasVentas.DAL
             return lista;
 
         }
+        public void InsertarProveedorDal(Proveedor proveedor)
+        {
+            string consulta = "insert into Proveedor values('" + proveedor.Nombre + "','" + proveedor.Telefono + "','" + proveedor.Direccion + "'," + "'Activo')";
+            conexion.Ejecutar(consulta);
+        }
+
     }
 }
