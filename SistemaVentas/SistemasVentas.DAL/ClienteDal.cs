@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,5 +17,11 @@ namespace SistemasVentas.DAL
             return lista;
 
         }
+        public void InsertarClienteDal(Cliente cliente)
+        {
+            string consulta = "insert into Cliente values('" + cliente.IdCliente + "','" + cliente.TipoCliente + "','" + cliente.CodigoCliente + "'," + "'Activo')";
+            conexion.Ejecutar(consulta);
+        }
     }
 }
+
