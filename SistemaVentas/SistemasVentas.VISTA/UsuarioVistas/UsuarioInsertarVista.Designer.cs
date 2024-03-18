@@ -86,8 +86,10 @@
             // 
             textBox3.Location = new Point(258, 284);
             textBox3.Name = "textBox3";
+            textBox3.PasswordChar = '*';
             textBox3.Size = new Size(229, 23);
             textBox3.TabIndex = 5;
+            textBox3.UseSystemPasswordChar = true;
             // 
             // button1
             // 

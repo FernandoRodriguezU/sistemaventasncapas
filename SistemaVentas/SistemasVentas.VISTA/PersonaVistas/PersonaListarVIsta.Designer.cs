@@ -42,6 +42,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(759, 410);
             dataGridView1.TabIndex = 0;
             // 
@@ -54,6 +55,7 @@
             button1.TabIndex = 1;
             button1.Text = "Seccionar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // PersonaListarVIsta
             // 
