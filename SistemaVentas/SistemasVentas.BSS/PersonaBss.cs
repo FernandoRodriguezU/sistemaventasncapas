@@ -25,5 +25,13 @@ namespace SistemasVentas.BSS
         {
             return dal.ObtenerPersonaId(id);
         }
+        public void EditarPersonaBss(Persona p)
+        {
+            dal.EditarPersonaDal(p);
+        }
+        public void EliminarPersonBss(int id)
+        {
+            dal.EliminarPersonaDal(id);
+        }
     }
 }
