@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemasVentas.VISTA.ClienteVistas;
+using SistemasVentas.VISTA.PersonaVistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +12,9 @@ using System.Windows.Forms;
 
 namespace SistemasVentas.VISTA.inicio
 {
-    public partial class inicio : Form
+    public partial class In : Form
     {
-        public inicio()
+        public In()
         {
             InitializeComponent();
         }
@@ -25,6 +27,12 @@ namespace SistemasVentas.VISTA.inicio
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           PersonaListarVIsta formulario = new PersonaListarVIsta();
+            formulario.Show();
         }
     }
 }
