@@ -31,7 +31,13 @@ namespace SistemasVentas.VISTA.inicio
 
         private void button3_Click(object sender, EventArgs e)
         {
-           PersonaListarVIsta formulario = new PersonaListarVIsta();
+            Vendedor formulario = new Vendedor();
+            formulario.Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Vendedor formulario = new Vendedor();
             formulario.Show();
         }
     }
