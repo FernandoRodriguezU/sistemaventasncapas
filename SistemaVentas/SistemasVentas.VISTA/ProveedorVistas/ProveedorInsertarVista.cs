@@ -26,7 +26,7 @@ namespace SistemasVentas.VISTA.ProveedorVistas
             p.Nombre = textBox1.Text;
             p.Telefono = textBox2.Text;
             p.Direccion = textBox3.Text;
-            bss.InsertarProveedorBss(p);
+            bss.InsertarPorveedorBss(p);
             MessageBox.Show("El cliente se guardo correctamente");
 
         }

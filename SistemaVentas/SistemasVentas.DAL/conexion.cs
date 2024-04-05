@@ -10,10 +10,9 @@ namespace SistemasVentas.DAL
 {
     public class conexion
     {
-
         public static string CONECTAR
         {
-            get { return @"Data Source=FERNANDO\SQLEXPRESS; Initial Catalog=TIENDABD; Integrated Security=True; TrustServerCertificate=true;"; }
+            get { return @"Data Source=FERNANDO\SQLEXPRESS; Initial Catalog=TIENDABD2; Integrated Security=True; TrustServerCertificate=true;"; }
             //get { return ConfigurationManager.ConnectionStrings["cadena"].ToString(); }
         }
         public static DataSet EjecutarDataSet(string consulta)
@@ -60,20 +59,6 @@ namespace SistemasVentas.DAL
             da.Fill(dt);
             return dt;
         }
-
-        public static string EjecutarEscalarComoString(string consulta)
-        {
-            using (SqlConnection conectar = new SqlConnection(conexion.CONECTAR))
-            {
-                conectar.Open();
-                using (SqlCommand cmd = new SqlCommand(consulta, conectar))
-                {
-                    cmd.CommandTimeout = 5000;
-                    object result = cmd.ExecuteScalar();
-                    return result != null ? result.ToString() : null;
-                }
-            }
-        }
         public static bool VerificarCredenciales(string usuario, string contraseña)
         {
             string consulta = "SELECT COUNT(1) FROM usuario WHERE nombreuser = @Usuario AND contraseña = @Contraseña";
@@ -88,7 +73,7 @@ namespace SistemasVentas.DAL
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
                 return count == 1;
             }
-        }
 
+        }
     }
 }

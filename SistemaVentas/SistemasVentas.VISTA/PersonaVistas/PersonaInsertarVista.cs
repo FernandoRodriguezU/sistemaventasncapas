@@ -35,5 +35,10 @@ namespace SistemasVentas.VISTA.PersonaVistas
         {
             PersonaListarVIsta fr = new PersonaListarVIsta();
         }
+
+        private void PersonaInsertarVista_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

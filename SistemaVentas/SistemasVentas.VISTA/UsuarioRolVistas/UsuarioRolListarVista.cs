@@ -22,5 +22,36 @@ namespace SistemasVentas.VISTA.UsuarioRolVistas
         {
             dataGridView1.DataSource = bss.ListarUsuarioRolBss();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            UsuarioRolInsertar fr = new UsuarioRolInsertar();
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView1.DataSource = bss.ListarUsuarioRolBss();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int IdSeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            UsuarioRolEditarVistas fr = new UsuarioRolEditarVistas(IdSeleccionado);
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView1.DataSource = bss.ListarUsuarioRolBss();
+            }
+        }
+       
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int IdSeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            DialogResult result = MessageBox.Show("¿Esta seguro de Eliminar este UsuarioRol?", "Eliminando", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                bss.EliminarUsuarioRolBss(IdSeleccionado);
+                dataGridView1.DataSource = bss.ListarUsuarioRolBss();
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace SistemaVentas.Modelos
 {
     public class Rol
     {
-        public int IdeRol { get; set; }
+        public int IdRol { get; set; }
         public string Nombre { get; set; }
         public string Estado { get; set; }
     }

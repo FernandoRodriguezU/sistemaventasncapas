@@ -22,5 +22,36 @@ namespace SistemasVentas.VISTA.VentaVistas
         {
             dataGridView1.DataSource = bss.ListarVentaBss();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           DetalleVentaVistas.DetalleVentaInsertar.IdVentaSeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            DetalleVentaVistas.DetalleVentaEditar.IdVentaSeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            VentaInsertarVista fr = new VentaInsertarVista();
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView1.DataSource = bss.ListarVentaBss();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int IdSeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            DialogResult result = MessageBox.Show("¿Esta seguro de Eliminar esta Venta?", "Eliminando", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                bss.EliminarVentaBss(IdSeleccionado);
+                dataGridView1.DataSource = bss.ListarVentaBss();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

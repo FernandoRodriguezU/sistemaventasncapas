@@ -1,4 +1,7 @@
-﻿using SistemasVentas.VISTA.ClienteVistas;
+﻿using SistemasVentas.VISTA.administrador;
+using SistemasVentas.VISTA.ClienteVistas;
+using SistemasVentas.VISTA.GerenteVistas;
+using SistemasVentas.VISTA.iniciovistas;
 using SistemasVentas.VISTA.PersonaVistas;
 using System;
 using System.Collections.Generic;
@@ -31,14 +34,25 @@ namespace SistemasVentas.VISTA.inicio
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Vendedor formulario = new Vendedor();
+            GerenteLoginVistas formulario = new GerenteLoginVistas();
             formulario.Show();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            GerenteVista listarvista = new GerenteVista();
+            listarvista.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             Vendedor formulario = new Vendedor();
             formulario.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

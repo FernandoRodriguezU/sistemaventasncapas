@@ -1,4 +1,5 @@
 ﻿using SistemasVentas.BSS;
+using SistemasVentas.VISTA.PersonaVistas;
 using SistemaVentas.Modelos;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,9 @@ namespace SistemasVentas.VISTA.ClienteVistas
         {
             InitializeComponent();
         }
-        ClienteBss bss= new ClienteBss();
+        ClienteBss bss = new ClienteBss();
+        public static int IdPersonaSeleccionada = 0;
+        PersonaBss bssp = new PersonaBss();
         public void button1_Click(object sender, EventArgs e)
         {
             Cliente C = new Cliente();
@@ -29,6 +32,16 @@ namespace SistemasVentas.VISTA.ClienteVistas
             C.IdCliente = Convert.ToInt32(textBox3.Text);
             bss.InsertarClienteBss(C);
             MessageBox.Show("El cliente se guardo correctamente");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PersonaListarVIsta fr = new PersonaListarVIsta();
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                Persona persona = bssp.ObtenerIdBss(IdPersonaSeleccionada);
+                textBox1.Text = persona.Nombre + " " + persona.Apellido;
+            }
         }
     }
 }

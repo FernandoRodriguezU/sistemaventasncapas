@@ -44,5 +44,10 @@ namespace SistemasVentas.VISTA.PersonaVistas
             bss.EditarPersonaBss(p);
             MessageBox.Show("Datos actulizados");
         }
+
+        private void PersonaEditarVista_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

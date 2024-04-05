@@ -22,5 +22,26 @@ namespace SistemasVentas.VISTA.DetalleIngVistas
         {
             dataGridView1.DataSource = bss.ListarDetalleIngBss();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int IdSeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            DialogResult result = MessageBox.Show("¿Esta seguro de Eliminar este DetalleIng?", "Eliminando", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                bss.EliminarDetalleIngBss(IdSeleccionado);
+                dataGridView1.DataSource = bss.ListarDetalleIngBss();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int IdSeleccionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            DetalleIngEditarVista fr = new DetalleIngEditarVista(IdSeleccionado);
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                dataGridView1.DataSource = bss.ListarDetalleIngBss();
+            }
+        }
     }
 }

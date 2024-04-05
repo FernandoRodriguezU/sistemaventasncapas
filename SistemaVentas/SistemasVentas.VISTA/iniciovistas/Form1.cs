@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemasVentas.VISTA.UsuarioRolVistas
+namespace SistemasVentas.VISTA.iniciovistas
 {
-    public partial class UsuarioRolInsertarVista : Form
+    public partial class Form1 : Form
     {
-        public UsuarioRolInsertarVista()
+        public Form1()
         {
             InitializeComponent();
         }

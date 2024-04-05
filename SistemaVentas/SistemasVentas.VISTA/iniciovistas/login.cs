@@ -1,4 +1,5 @@
 ﻿using SistemasVentas.DAL;
+using SistemasVentas.VISTA.GerenteVistas;
 using SistemasVentas.VISTA.inicio;
 using SistemasVentas.VISTA.PersonaVistas;
 using System;
@@ -36,16 +37,12 @@ namespace SistemasVentas.VISTA.login
 
             if (conexion.VerificarCredenciales(usuario, contraseña))
             {
-                MessageBox.Show("Inicio de sesión exitoso");
-                In formulario = new In();
+                GerenteLoginVistas formulario = new GerenteLoginVistas();
                 formulario.Show();
-
-                // Aquí puedes abrir el formulario principal o realizar cualquier otra acción después del inicio de sesión exitoso
             }
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos");
-
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -54,5 +51,26 @@ namespace SistemasVentas.VISTA.login
 
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string usuario = user.Text;
+            string contraseña = pass.Text;
+
+            if (conexion.VerificarCredenciales(usuario, contraseña))
+            {
+                GerenteLoginVistas formulario = new GerenteLoginVistas();
+                formulario.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

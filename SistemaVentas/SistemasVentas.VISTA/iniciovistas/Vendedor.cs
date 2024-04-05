@@ -68,7 +68,7 @@ namespace SistemasVentas.VISTA.inicio
         private void button10_Click(object sender, EventArgs e)
         {
             UsuarioBss bss = new UsuarioBss();
-            dataGridView1.DataSource = bss.UsuarioDatosBss();
+            dataGridView1.DataSource = bss.ListarUsuarioBss();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace SistemasVentas.VISTA.inicio
             if (result == DialogResult.Yes)
             {
                 PersonaBss bss = new PersonaBss();
-                bss.EliminarPersonBss(IdPersonaSeleccionada);
+                bss.EliminarPersonaBss(IdPersonaSeleccionada);
                 dataGridView1.DataSource = bss.ListarPersonaBss();
             }
         }
